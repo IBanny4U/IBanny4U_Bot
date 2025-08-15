@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Compile Java files
-RUN javac -cp "lib/*" com/ibnybot/CodingAssistant.java
+RUN javac -cp "lib/*" com/ibnybot/*.java com/gemini/*.java
 
 # Run the bot
-CMD ["java", "-cp", "lib/*:.", "com.ibnybot.CodingAssistant"]
+CMD ["java", "-cp", "lib/*:.", "com.ibnybot.Main"]
