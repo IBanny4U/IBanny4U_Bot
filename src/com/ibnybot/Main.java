@@ -18,6 +18,7 @@ public class Main {
            botsApi.registerBot(new CodingAssistant("AIzaSyDjojLCjskhWGMD0YyQ0Vl8gB117fFOJdc"));
       //       botsApi.registerBot(new JavaAssistantBot("AIzaSyDjojLCjskhWGMD0YyQ0Vl8gB117fFOJdc"));
             System.out.println("Bot started successfully!");
+            break;
 
         } catch (Exception e) {
              System.out.println("Bot failed to start. Retrying in 30 seconds...");
