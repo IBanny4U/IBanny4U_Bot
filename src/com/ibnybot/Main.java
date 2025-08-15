@@ -21,14 +21,17 @@ public class Main {
 
         } catch (Exception e) {
              System.out.println("Bot failed to start. Retrying in 30 seconds...");
+            try {
             Thread.sleep(30000);
+        } catch (InterruptedException ie) {
+            System.out.println("Sleep interrupted: " + ie.getMessage());
+            Thread.currentThread().interrupt(); // optional: restore interrupt status
 
-            System.out.println("Bot is Dead!");
-            e.printStackTrace();
         }
     }
 
 
     }
-};
+}
 
+}
