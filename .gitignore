@@ -1,0 +1,32 @@
+# 🔒 Secrets and config
+.env
+*.key
+*.pem
+*.crt
+
+# 🧠 Compiled Java files
+*.class
+bin/
+
+# 🐳 Docker artifacts
+*.log
+*.pid
+*.tmp
+
+# 🧰 IDE and editor folders
+.vscode/
+.idea/
+*.iml
+
+# 📦 Dependency folders (if any)
+node_modules/
+target/
+out/
+
+# 🧪 Test reports and coverage
+*.coverage
+*.lcov
+
+# 🧼 OS-specific junk
+.DS_Store
+Thumbs.db
