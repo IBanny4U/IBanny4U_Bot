@@ -1,14 +1,13 @@
-# Use a lightweight Java image
+# Use a lightweight Java base image
 FROM openjdk:17-jdk-slim
 
-# Set working directory
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy source files and libraries
-COPY com/ com/
-COPY lib/ lib/
+# Copy everything from your project folder into the container
+COPY . .
 
-# Compile all Java files
+# Compile all Java source files
 RUN javac -cp "lib/*" com/ibnybot/*.java com/gemini/*.java
 
 # Run the bot using Main class
