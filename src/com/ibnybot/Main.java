@@ -13,26 +13,19 @@ public class Main {
 
 
         try {
-            
+             Thread.sleep(60000); //1minute
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
            botsApi.registerBot(new CodingAssistant("AIzaSyDjojLCjskhWGMD0YyQ0Vl8gB117fFOJdc"));
       //       botsApi.registerBot(new JavaAssistantBot("AIzaSyDjojLCjskhWGMD0YyQ0Vl8gB117fFOJdc"));
             System.out.println("Bot started successfully!");
-            break;
 
         } catch (Exception e) {
-             System.out.println("Bot failed to start. Retrying in 30 seconds...");
-            try {
-            Thread.sleep(30000);
-        } catch (InterruptedException ie) {
-            System.out.println("Sleep interrupted: " + ie.getMessage());
-            Thread.currentThread().interrupt(); // optional: restore interrupt status
-
+            System.out.println("Bot is Dead");
+            e.printStackTrace();
         }
     }
 
 
     }
-}
+};
 
-}
