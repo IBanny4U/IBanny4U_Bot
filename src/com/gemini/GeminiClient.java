@@ -6,19 +6,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.IOException;
-
-
-
-
-import java.net.URI;
 import java.net.http.*;
 import com.google.gson.*;
 
 public class GeminiClient {
-    String apiKey = System.getenv("OPENAI_API_KEY");
-
+    private final String apiKey;
     public GeminiClient(String apiKey) {
-        this.API_KEY = apiKey;
+        this.apiKey = apiKey;
     }
 
 public String getReply(String prompt) {
@@ -26,7 +20,7 @@ public String getReply(String prompt) {
 
     try {
         // Step 1: Setup connection
-        URL url = new URL("https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyDjojLCjskhWGMD0YyQ0Vl8gB117fFOJdc");
+        URL url = new URL("https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=" + apiKey );
         connection = (HttpURLConnection) url.openConnection();
 
         // Step 2: Set headers
