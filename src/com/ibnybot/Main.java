@@ -20,6 +20,7 @@ public class Main {
             System.out.println("Bot started successfully!");
 
         } catch (Exception e) {
+            System.out.println("Bot is Dead!");
             e.printStackTrace();
         }
     }
