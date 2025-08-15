@@ -4,8 +4,11 @@ FROM openjdk:17-jdk-slim
 # Set working directory inside the container
 WORKDIR /app
 
-# Copy everything from your project folder into the container
-COPY . .
+# Copy source files from src/com/ into /app/com/
+COPY src/com/ com/
+
+# Copy all JAR dependencies into /app/lib/
+COPY lib/ lib/
 
 # Compile all Java source files
 RUN javac -cp "lib/*" com/ibnybot/*.java com/gemini/*.java
